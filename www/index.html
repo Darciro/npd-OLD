@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" type="text/css" href="./css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+        
+        <title>Concalcs</title>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="./js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="./js/highcharts.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript">
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+                // PhoneGap application
+                app.initialize();
+            } else {
+                // Web page
+                app.onDeviceReady();
+                setTimeout(function() {
+                    var listeningElement = $('.listening');
+                    var receivedElement = $('.received');
+
+                    listeningElement.css( 'display', 'none' );
+                    receivedElement.css( 'display', 'block' );
+
+                    console.log('Desktop');
+                }, 500);
+                
+            }  
+        </script>
+    </head>
+    <body>
+        <div id="main" data-role="page">
+
+            <div data-role="header" data-position="fixed">
+                <a href="#sidebar" class="ui-btn ui-custom-icons btn-clean ui-nodisc-icon ui-icon-bars ui-btn-inline ui-btn-icon-notext">Menu</a>
+                <h1>Na Ponta do Dedo</h1>
+                <a href="expense.html" class="ui-btn ui-custom-icons btn-clean ui-nodisc-icon ui-icon-refresh ui-btn-inline ui-btn-icon-notext">Add</a>
+            </div>
+
+            <div role="main" class="ui-content">
+
+                <div class="event listening ui-body ui-body-a ui-corner-all">
+                    <p>Connecting to Device, please wait...</p>
+                </div>
+                <div class="event received ui-body ui-body-a ui-corner-all">
+                <!-- <div class="event ui-body ui-body-a ui-corner-all"> -->
+                    <h4>Overview</h4>
+                    <div id="overview-chart" tyle="width:100%; height:400px;"></div>
+                </div>
+            </div>
+
+            <!-- <div data-role="footer" data-position="fixed">
+                <h4>Page Footer</h4>
+            </div> -->  
+
+        </div><!-- /page -->
+
+    </body>
+</html>

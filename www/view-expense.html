@@ -1,0 +1,27 @@
+<div id="view-expense" data-role="page">
+
+    <div data-role="header" class="ui-header-red ui-nodisc-icon" data-position="fixed">
+        <a class="ui-custom-icons ui-link ui-btn-left ui-btn ui-icon-carat-l ui-btn-icon-notext ui-nodisc-icon btn-clean" href="#" data-icon="carat-l" data-iconpos="notext" onclick="app.goBackBtn();">Voltar</a>
+        <h1>Despesa</h1>
+    </div>
+
+    <div id="wrapper" role="main" class="ui-content">
+        <div id="single-entry"></div>
+    </div>
+
+    <div data-role="footer" class="ui-btn-active ui-state-persist" data-position="fixed">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#" data-icon="check">Finalizar</a>
+                </li>
+                <li>
+                    <a href="#" data-icon="edit" onclick="app.editID()">Editar</a>
+                </li>
+                <li>
+                    <a href="#" data-icon="delete" onclick="app.deleteID()">Excluir</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div  id="add" data-role="page">
+
+    <div data-role="header" class="ui-header-green" data-add-back-btn="true" data-position="fixed">
+        <h1>Adicionar Nova Receita</h1>
+        <!-- <i class="fa fa-bars"></i> -->
+        <a href="#sidebar" class="ui-btn ui-custom-icons ui-alt-icon ui-nodisc-icon ui-icon-bars ui-btn-inline ui-btn-icon-notext">Menu</a>
+    </div>
+
+    <div role="main" class="ui-content">
+        <form id="add-form" action="#" method="get">
+            <div class="form-field ui-field-contain">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" placeholder="Title" value="">
+            </div>
+            <div class="form-field ui-field-contain">
+                <label for="value">Value:</label>
+                <input type="number" pattern="^\d*(\.\d{2}$)?" size="8" name="value" id="value" placeholder="R$" value="">
+            </div>
+            <div class="form-field ui-field-contain">
+                <label for="payment_date">Data:</label>
+                <input type="date" name="payment_date" id="payment_date" placeholder="DD/MM/AAAA" value="">
+            </div>
+            <div class="form-field ui-field-contain">
+                <label for="hour">Hora:</label>
+                <input type="text" pattern="^\d*(\.\d{2}$)?" name="hour" id="hour" placeholder="12:00" value="">
+            </div>
+            <div class="form-field ui-field-contain">
+                <label for="body">Notas:</label>
+                <textarea cols="40" rows="8" name="body" id="body"></textarea>
+            </div>
+            <div class="form-field ui-field-contain">
+                <label for="slider">Notas:</label>
+                <input type="range" name="slider" id="slider" value="2" min="0" max="60">
+            </div>
+            <div class="form-field ui-field-contain">
+            </div>
+            <fieldset data-role="controlgroup">
+                <legend>Checkboxes, vertical controlgroup:</legend>
+                <input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked="">
+                <label for="checkbox-1a">Some shit 1</label>
+                <input type="checkbox" name="checkbox-2a" id="checkbox-2a">
+                <label for="checkbox-2a">Another one...</label>
+                <input type="checkbox" name="checkbox-3a" id="checkbox-3a">
+                <label for="checkbox-3a">Foo</label>
+            </fieldset>
+        </form>
+    </div>
+
+    <div data-role="footer" class="ui-btn-active ui-state-persist ui-body-b" data-position="fixed">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#" data-icon="delete" onclick="app.goBackBtn()">Cancel</a>
+                </li>
+                <li>
+                    <a href="#" data-icon="check" onclick="app.saveEntry()">Confirm</a>
+                </li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+</div>
